@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <style>
+        #gameBoard {
+            min-height: calc(85vh - 100px);
+            position: relative;
+        }
+
+        .box {
+            position: absolute;
+            background-color: #ff0000;
+            width: 30px;
+            height: 30px;
+        }
+    </style>
+
+</head>
+
+<body>
+<h1>Убери кубики</h1>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-4">
+            <div class="card">
+                <div class="card-body d-flex justify-content-between">
+                    <div>
+                        <button type="button"
+                                class="btn btn-outline-danger"
+                                id="startGameButton"
+                                onclick="startGame()">
+                            Start
+                        </button>
+                    </div>
+
+                    <div>
+                        <button type="button"
+                                class="btn btn-outline-danger "
+                                onclick="newGame()">
+                            New Game
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-8">
+            <div class="card">
+                <div class="card-body d-flex justify-content-between">
+                    <div>
+                        <strong>Score</strong>
+                        <span id="score">0</span>
+                    </div>
+                    <div>
+                        <strong>Time left</strong>
+                        <span id="counter">01:00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-8">
+            <div class="card">
+                <div class="card-body" id="gameBoard">
+                </div>
+            </div>
+        </div>
+
+        <div class="col-4">
+            <div class="card">
+                <div class="card-body" id="resultTable">
+                    <strong>Result Table</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="myModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="yourScore">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <label for="name">Name</label><input id="name" type="text">
+                </div>
+                <div class="modal-footer">
+                    <button type="button"
+                            class="btn btn-primary"
+                            onclick="saveResult()">Save
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
+<script src="index.js"></script>
+</body>
+</html>
